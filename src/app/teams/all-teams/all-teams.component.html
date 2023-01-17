@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div id="content">
+    <div id="dodajNovi" *ngIf="trebaNovi">
+        <button class="btn" (click)="dodajNovu()" style="background-color: brown; color:white;"><b>DODAJ</b></button>
+        <div id="dodajForma" *ngIf="dodajForma" style="margin-top: 5px;">
+            <div class="form-group" style="display: inline;">
+                <input type="text" class="form-control" placeholder="Naziv" style="width: 20%; display: inline; margin-right: 5px;" [(ngModel)]="team.name">
+                <select class="form-select" aria-label="Default select example"  style="width: 20%; display: inline; margin-right: 5px;" [(ngModel)]="selectedContinent">
+                    
+                    <option *ngFor="let con of continents">{{con}}</option>
+                </select>
+                <input type="file" class="form-control" accept="image/png, image/jpeg" id="formFile" (change)="select($event)" style="width: 50%; display: inline; margin-right: 5px;">
+            </div>
+        </div>
+    </div>
+    <div id="lista">
+        <ul class="list-group list-group-flush" style="margin-right: 20px;">
+            <li class="list-group-item" *ngFor="let team of firstTeams">
+                <img src={{team.flag}} style="width: 30px; height: 30px; border-radius: 100px;">
+                {{team.name}}
+            </li>
+        </ul>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let team of secondTeams">
+                <img src={{team.flag}} style="width: 30px; height: 30px; border-radius: 100px;">
+                {{team.name}}
+            </li>
+        </ul>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let team of thirdTeams">
+                <img src={{team.flag}} style="width: 30px; height: 30px; border-radius: 100px;">
+                {{team.name}}
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div id="content">
+    <div id="dodajNovu" *ngIf="matches.length!=48">
+        <button class="btn" (click)="dodajNovu()" style="background-color: brown; color:white;"><b>DODAJ</b></button>
+        <div id="dodajForma" *ngIf="dodajForma" style="margin-top: 5px;">
+            <div class="form-group" style="display: inline;">
+                <div id="prviRed">
+                    <input type="datetime-local" id="floatingEndDate" class="form-control" [(ngModel)]="match.dateTime" style="width: 20%; display: inline;">
+                    <select class="form-select" aria-label="Default select example"  style="width: 20%; display: inline; margin-left: 5px;" [ngModel]="selectedGroup" (ngModelChange)="ucitajTimove($event)">
+                        <option [ngValue]="group" *ngFor="let group of groups">{{group.name}}</option>
+                    </select>
+                </div>
+                <div id="drugiRed" style="margin-top: 5px;">
+                    <select class="form-select" aria-label="Default select example"  style="width: 20%; display: inline; margin-right: 5px;" [ngModel]="selectedTeam1" (ngModelChange)="promeniTimove1($event)">
+                        <option [ngValue]="team" *ngFor="let team of teams1">{{team.name}}</option>
+                    </select>
+                    <input type="number" [(ngModel)]="match.team1Goals" style="width: 5%"> <b style="font-size: x-large;"> : </b> <input type="number" [(ngModel)]="match.team2Goals" style="width: 5%">
+                    <select class="form-select" aria-label="Default select example"  style="width: 20%; display: inline; margin-left: 5px;" [ngModel]="selectedTeam2" (ngModelChange)="promeniTimove2($event)">
+                        <option [ngValue]="team" *ngFor="let team of teams2">{{team.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="jedanDan" >
+        <div id="utakmica" *ngFor="let match of matches">
+            
+            <p style="font-size: medium; display: inline;"><b>{{match.group}}</b></p>
+            <p style="font-size: small; display: inline; margin-left: 68%;">{{match.dateTime | date: 'dd.MM.yyyy.'}}</p>
+            <div>
+            <p style="font-size: small; display: inline;">{{match.stadium}}</p>
+            <p style="font-size: small; display: inline; margin-left: 70%">{{match.dateTime | date: 'HH:mm'}}</p></div>
+            <hr>
+            <div id="rezultat">
+                <p><img src={{match.team1.flag}}></p>
+                <p *ngIf="match.team1Goals<match.team2Goals || match.team1Goals==match.team2Goals"> {{match.team1.name}}</p>
+                <p *ngIf="match.team1Goals>match.team2Goals"><b>{{match.team1.name}}</b></p>
+                <p style="font-size: x-large;"><b>{{match.team1Goals}} : {{match.team2Goals}}</b></p>
+                <p *ngIf="match.team1Goals>match.team2Goals || match.team1Goals==match.team2Goals">{{match.team2.name}}</p>
+                <p *ngIf="match.team1Goals<match.team2Goals"><b>{{match.team2.name}}</b></p>
+                <p><img src="{{match.team2.flag}}"></p>
+            </div>
+            <hr>
+            <button class="btn">Detalji</button>
+        </div>
+    </div>
+</div>

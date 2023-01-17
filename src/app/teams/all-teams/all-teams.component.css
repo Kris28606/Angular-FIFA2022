@@ -1,0 +1,21 @@
+#lista {
+    margin: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px wheat solid;
+    padding: 5px;
+}
+
+* {
+    font-family: Calibri;
+    letter-spacing: 3px;
+}
+
+#dodajNovi {
+    text-align: center;
+    margin: 3px;
+}
+
+#dodajNovi button b:hover {
+    color: rgb(255, 241, 161);
+}

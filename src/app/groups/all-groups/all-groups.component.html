@@ -1,0 +1,63 @@
+<app-header></app-header>
+<div id="content">
+    <div id="grupa" *ngFor="let group of groups">
+        <h1 style="font-size: x-large;">{{group.name}}</h1>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" style="width: 35%;">Tim</th>
+                <th scope="col">UO</th>
+                <th scope="col">P</th>
+                <th scope="col">I</th>
+                <th scope="col">N</th>
+                <th scope="col">GR</th>
+                <th scope="col"><b>P</b></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="group.teams.length>0" id="prosao">
+                <th scope="row">1</th>
+                <td id="naziv"><img src={{group.teams[0].flag}}><b>  {{group.teams[0].name}}</b></td>
+                <td>{{group.teams[0].played}}</td>
+                <td>{{group.teams[0].won}}</td>
+                <td>{{group.teams[0].lost}}</td>
+                <td>{{group.teams[0].drawn}}</td>
+                <td>{{group.teams[0].goalDifference}}</td>
+                <td>{{group.teams[0].points}}</td>
+              </tr>
+              <tr *ngIf="group.teams.length>1" id="prosao">
+                <th scope="row">2</th>
+                <td id="naziv"><img src={{group.teams[1].flag}}><b> {{group.teams[1].name}}</b></td>
+                <td>{{group.teams[1].played}}</td>
+                <td>{{group.teams[1].won}}</td>
+                <td>{{group.teams[1].lost}}</td>
+                <td>{{group.teams[1].drawn}}</td>
+                <td>{{group.teams[1].goalDifference}}</td>
+                <td>{{group.teams[1].points}}</td>
+              </tr>
+              <tr *ngIf="group.teams.length>2">
+                <th scope="row">3</th>
+                <td id="naziv"><img src={{group.teams[2].flag}}> {{group.teams[2].name}}</td>
+                <td>{{group.teams[2].played}}</td>
+                <td>{{group.teams[2].won}}</td>
+                <td>{{group.teams[2].lost}}</td>
+                <td>{{group.teams[2].drawn}}</td>
+                <td>{{group.teams[2].goalDifference}}</td>
+                <td>{{group.teams[2].points}}</td>
+              </tr>
+              <tr *ngIf="group.teams.length>3">
+                <th scope="row">4</th>
+                <td id="naziv"><img src={{group.teams[3].flag}}> {{group.teams[3].name}}</td>
+                <td>{{group.teams[3].played}}</td>
+                <td>{{group.teams[3].won}}</td>
+                <td>{{group.teams[3].lost}}</td>
+                <td>{{group.teams[3].drawn}}</td>
+                <td>{{group.teams[3].goalDifference}}</td>
+                <td>{{group.teams[3].points}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+    </div>
+</div>

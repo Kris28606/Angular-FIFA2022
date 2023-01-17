@@ -1,0 +1,56 @@
+#jedanDan {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+
+#content {
+    padding: 15px;
+}
+
+#utakmica {
+    border: 3px wheat solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+#rezultat {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr 1fr 0.5fr;
+    text-align: center;
+}
+
+#rezultat p {
+    font-size: x-large;
+}
+
+* {
+    font-family: Calibri;
+    letter-spacing: 3px;
+}
+
+#utakmica button {
+    margin-left: 42%;
+    background-color: brown;
+    color: white;
+}
+
+#utakmica button:hover {
+    color: wheat;
+}
+
+p img {
+    height: 40px;
+    width: 70px;
+    border: 1px brown solid;
+}
+
+#dodajNovu {
+    text-align: center;
+    margin: 1px;
+}
+
+#dodajNovu button b:hover {
+    color: rgb(255, 241, 161);
+}

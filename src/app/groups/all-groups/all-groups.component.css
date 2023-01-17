@@ -1,0 +1,40 @@
+#content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,50%);
+    
+    padding: 15px;
+    justify-content: center;
+    background-color: rgba(255, 213, 161, 0.411);
+}
+
+#grupa {
+    border: 2px rgb(255, 218, 150) solid;
+    padding: 5px;
+    margin: 5px;
+    background-color: white;
+}
+
+.table{
+    font-size: medium;
+    text-align: center;
+}
+
+.table tbody tr td img {
+    height: 20px;
+    width: 30px;
+    border: 1px brown solid;
+}
+
+* {
+    font-family: Calibri;
+    letter-spacing: 3px;
+}
+
+#naziv {
+    text-align: left;
+}
+
+#prosao {
+    border-left: 3px red solid;
+    background-color: antiquewhite;
+}

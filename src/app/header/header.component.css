@@ -1,0 +1,21 @@
+.header {
+    background-color: brown;
+    width:100%;
+}
+
+b:hover{
+    color: rgb(255, 241, 161);
+}
+
+* {
+    font-family: Calibri;
+    letter-spacing: 3px;
+}
+
+button{
+    margin-left: 2%;
+}
+
+img:hover {
+    cursor: pointer;
+}
